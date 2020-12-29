@@ -1,0 +1,11 @@
+[package]
+name = "rust-scheduling-job"
+version = "0.1.0"
+authors = ["Rodrigo Casara <rodrigocasara@gmail.com>"]
+edition = "2018"
+readme = "README.md"
+
+[dependencies]
+
+[dev-dependencies]
+pretty_assertions = "0.6.1"
