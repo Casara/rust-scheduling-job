@@ -2,6 +2,8 @@ use chrono::{DateTime, Duration, Local};
 use itertools::Itertools;
 use std::ops::Sub;
 
+const MAX_TIME: u32 = 8;
+
 #[derive(Clone)]
 pub struct Job {
     id: u64,
@@ -47,7 +49,7 @@ impl Schedule {
             .sorted_by(|a, b| Ord::cmp(&a.max_end_date, &b.max_end_date))
             .group_by(move |job| {
                 count += job.estimated_time;
-                if count > 8 {
+                if count > MAX_TIME {
                     count = 0;
                     index += 1;
                 }
